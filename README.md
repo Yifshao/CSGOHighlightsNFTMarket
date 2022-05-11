@@ -42,9 +42,13 @@ To experience my DAPP, please follow these steps:
 5. run ```npx hardhat node```. Then in the terminal you will see 20 test accounts. Record several private keys of the accounts, which will be used later. Please leave this terminal and do not close it.
 6. Install MetaMask. Link: https://metamask.io/ I recommend you to use Chrome explorer.
 7. Open your MetaMask. Import several accounts using private keys got in step 5.
+
 <img width="356" alt="image" src="https://user-images.githubusercontent.com/80507783/167769738-d0cf2a83-f533-453d-83f3-c741c9ce17c7.png">
+
 8. Add Hardhat Testnet in your MetaMask network. Here is the information you need.
+
 <img width="361" alt="image" src="https://user-images.githubusercontent.com/80507783/167769992-2d07fbd4-5167-4ee2-8a26-c8ef4a57a242.png">
-9. Now open a new terminal in Visual Studio Code. Run ```npm start```.<br>
+
+9. Now open a new terminal in Visual Studio Code. Run ```npm start```
 10. Go to http://localhost:3000/ and enjoy it!
 
