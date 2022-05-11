@@ -544,8 +544,8 @@ const Create = ({ highlightmarket, nft}) => {
                             </Form.Select>
                             </FloatingLabel>
                             <FloatingLabel
-                            controlId="The player of highlight"
-                            label="Map"
+                            controlId="floatingInput"
+                            label="The player of highlight"
                             className="mb-3"
                         >
                             <Form.Select onChange={(e) => setplayer(e.target.value)}>
