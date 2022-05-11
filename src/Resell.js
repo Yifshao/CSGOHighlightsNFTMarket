@@ -307,12 +307,8 @@ const Resell = ({ highlightmarket, nft, account}) => {
             return
         }
         loadinformation()
-        if(!soldornot){
-            handlenotsoldShow()
-            return
-        }
-        if(lefttimes < 1){
-            handlecansoldShow()
+        if(!appear){
+            handleappearerrorShow()
             return
         }
         if(oldowner.toLowerCase() !== account)
@@ -320,8 +316,12 @@ const Resell = ({ highlightmarket, nft, account}) => {
             handleisowenrShow()
             return
         }
-        if(!appear){
-            handleappearerrorShow()
+        if(!soldornot){
+            handlenotsoldShow()
+            return
+        }
+        if(lefttimes < 1){
+            handlecansoldShow()
             return
         }
 
