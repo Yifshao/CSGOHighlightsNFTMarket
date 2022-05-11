@@ -1,6 +1,6 @@
 {
-  "name": "nft_market",
-  "version": "0.2.0",
+  "name": "ys3349_nft_market",
+  "version": "0.1.0",
   "private": false,
   "dependencies": {
     "@babel/preset-react": "^7.16.7",
