@@ -16,9 +16,12 @@ const Sellpurchases = ({highlightmarket, nft, account}) => {
     const [loading, setloading] = useState(true)
     const [mybuyings, setmybuyings] = useState([])
     const [totalcost, settotalcost] = useState(0)
+    const [sellid, setsellid] = useState(null)
     const [shows, setshows] = useState(false)
     const handleshowsClose = () => setshows(false)
-    const handleshowsShow = () => setshows(true)
+    const handleshowsShow = (highlightID) => {
+        setsellid(highlightID)
+        setshows(true)}
     const [newprice, setnewprice] = useState(null)
 
     const maptoimage = (map) =>{
@@ -146,18 +149,18 @@ const Sellpurchases = ({highlightmarket, nft, account}) => {
     const handlepriceClose = () => setpricenegative(false)
     const handlepriceShow = () => setpricenegative(true)
 
-    const resellNFT = async (highlightid) => {
+    const resellNFT = async () => {
         if(newprice <= 0){
             handlepriceShow()
             return
         }
-        resellpurchases(highlightid, newprice)
+        resellpurchases(sellid, newprice)
     }
 
-    const resellpurchases = async (highlight_id, newprice) =>{
+    const resellpurchases = async (sellid, newprice) =>{
         await (await nft.setApprovalForAll(highlightmarket.address, true)).wait()
         const listingPrice = ethers.utils.parseEther(newprice.toString())
-        await (await highlightmarket.sellboughts(highlight_id, listingPrice)).wait()
+        await (await highlightmarket.sellboughts(sellid, listingPrice)).wait()
     }
 
     useEffect(() => {
@@ -176,7 +179,6 @@ const Sellpurchases = ({highlightmarket, nft, account}) => {
                 mybuyings.length > 0 ?
                 <div className='px-5 py-3 container'>
                     <h2>Choose the NFT you want to sell:</h2>
-                    <h>Total cost: {totalcost} ETH</h>
                     <Row xs={1} md={2} lg={4} className="g-4 py-4">
                         {
                             mybuyings.map((highlight, idx) =>(
@@ -200,8 +202,7 @@ const Sellpurchases = ({highlightmarket, nft, account}) => {
                                         </Dropdown>
                                         </Card.Body>
                                         <Card.Footer>
-                                        <Card.Text >Paid {ethers.utils.formatEther(highlight.TotalPrice.toString())} ETH</Card.Text>
-                                        <Button onClick={handleshowsShow}>Sell this NFT</Button>
+                                        <Button onClick={() => handleshowsShow(highlight.highlightID)}>Sell this NFT</Button>
                                         <Modal show={shows} onHide={handleshowsClose}>
                                         <Modal.Header closeButton>
                                             <Modal.Title>Please set the price of this NFT.</Modal.Title>
@@ -213,7 +214,7 @@ const Sellpurchases = ({highlightmarket, nft, account}) => {
                                         <Button variant="secondary" onClick={handleshowsClose}>
                                             Close
                                         </Button>
-                                        <Button variant="primary" onClick={() => resellNFT(highlight.highlightID)} as={Link} to="/success-create">
+                                        <Button variant="primary" onClick={() => resellNFT()} as={Link} to="/success-create">
                                             Confirm
                                         </Button>
                                         </Modal.Footer>

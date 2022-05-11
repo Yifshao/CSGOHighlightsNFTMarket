@@ -19,8 +19,11 @@ const Mysellinghighlights = ({highlightmarket, nft, account}) => {
     const [totalselling, settotalselling] = useState(null)
     const [totalreceive, settotalreceive] = useState(null)
     const [totalcount, settotalcount] = useState(null)
+    const [withdrawid, setwithdrawid] = useState(null)
     const handlecautionClose = () => setcaution(false)
-    const handlecautionShow = () => setcaution(true)
+    const handlecautionShow = (highlightID) => {
+        setwithdrawid(highlightID)
+        setcaution(true)}
 
     const maptoimage = (map) =>{
         if(Number(map) === 0){
@@ -156,8 +159,8 @@ const Mysellinghighlights = ({highlightmarket, nft, account}) => {
         settotalcount(totalcount)
     }
     
-    const withdrawnft = async (highlightid) => {
-        await (await highlightmarket.withdraw(highlightid)).wait()
+    const withdrawnft = async () => {
+        await (await highlightmarket.withdraw(withdrawid)).wait()
         handlecautionClose()
     }
 
@@ -207,7 +210,7 @@ const Mysellinghighlights = ({highlightmarket, nft, account}) => {
                                         <Card.Text> Will received {ethers.utils.formatEther(highlight.price.toString())} ETH if sold</Card.Text>
                                         </Card.Footer>
                                         <Card.Footer>
-                                            <Button variant='danger' onClick={handlecautionShow}>
+                                            <Button variant='danger' onClick={() => handlecautionShow(highlight.highlightID)}>
                                                 Withdraw this NFT
                                             </Button>
                                         </Card.Footer>
@@ -216,13 +219,13 @@ const Mysellinghighlights = ({highlightmarket, nft, account}) => {
                                             <Modal.Title>Caution.</Modal.Title>
                                         </Modal.Header>
                                         <Modal.Body>
-                                            The gas fee you paid for your NFT will not be returned.
+                                            The gas fee you paid for your NFT will not be returned. If you sell a NFT that you bought, you cannot resell it after you withdraw it.
                                         </Modal.Body>
                                         <Modal.Footer>
                                         <Button variant="secondary" onClick={handlecautionClose}>
                                             Close
                                         </Button>
-                                        <Button variant="primary" onClick={() => withdrawnft(highlight.highlightID)} as={Link} to="/success-create">
+                                        <Button variant="primary" onClick={() => withdrawnft()} as={Link} to="/success-create">
                                             Confirm
                                         </Button>
                                         </Modal.Footer>
