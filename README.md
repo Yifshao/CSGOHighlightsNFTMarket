@@ -5,7 +5,8 @@
 ![React Badge](https://img.shields.io/badge/React-17.0.2-45b8d8?style=flat-square)
 ![Solidity_Badge](https://img.shields.io/badge/Solidity-%5E0.8.4-363636?style=flat-square)
 ![Hardhat](https://img.shields.io/badge/Hardhat-2.8.4-F0E8E0?style=flat-square)
-![ethers.js](https://img.shields.io/badge/ethers.js-%5E5.5.4-363636?style=flat-square)
+![ethers.js](https://img.shields.io/badge/ethers.js-%5E5.5.4-blue?style=flat-square)
+![@openzeppelin](https://img.shields.io/badge/@openzeppelin-4.5.0-pink?style=flat-square)
 
 Final Project of ELEN E6883 (2022 Spring).
 
