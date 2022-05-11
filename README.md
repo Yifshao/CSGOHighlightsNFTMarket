@@ -13,7 +13,7 @@ Final Project of ELEN E6883 (2022 Spring).
 Author: Yifan Shao<br>
 UNI: ys3349
 
-**Introduction**
+## Introduction
 
 CSGO Highlights NFT Market is a NFT Market where you can sell your CSGO highlights as well as buy the NFTs of others' highlights. 
 
@@ -21,7 +21,7 @@ The smart contracts codes are in folder "contracts".
 
 The frontend codes are in folder "src".
 
-**Instructions**
+## Instructions
 
 PS: The instructions are a little bit long. If you just want to see the demo of my DAPP, you can choose to watch the demo video:
 
@@ -30,6 +30,8 @@ I choose to use Hardhat Testnet + MetaMask instead of Huygens + Ale wallet for t
 The (main) reason I choose to use Hardhat Testnet + MetaMask is that using Huygens + Ale wallet needs to use mcp.js to call functions in smart contracts. When calling transaction functions, mcp.js requires the user to enter password, which is not safe in a DAPP as blockchain is trustless. There are also some incompatibilities when using mcp.js.
 
 Using ethers.js can solve all the problems of using mcp.js, but only MetaMask supports ethers.js now. Since professor Li told me that Metamask will be supported in the next version of ComputeCoin Network, I choose to use Hardhat Testnet+MetaMask for this demo. When next version of CCN is released, you can choose to use Huygens+MetaMask to use my DAPP. I have also deployed my smart contracts on Huygens successfully (the ABIs and addresses are stored in "/src/Huygens_contractsData"). I will also update my codes when next version of CCN is released.
+
+### How to run my codes:
 
 To experience my DAPP, please follow these steps:
 
