@@ -410,6 +410,7 @@ contract HighlightMarket is ReentrancyGuard{
         //Store the new NFT
         items[_highlight_id] = highlight;
         buyerstorage[_highlight_id] = address(123);
+        withdrawornot[_highlight_id] = false;
     }
 
 //Function withdraw enables sellers to withdraw their selling NFTs.
@@ -424,6 +425,10 @@ contract HighlightMarket is ReentrancyGuard{
         //Restore the changes caused by this NFT
         Highlight storage highlight = items[_highlight_id];
         allconnect = append(highlight.class, highlight.csgo_map, highlight.demo_url, highlight.round_num, highlight.player_num);
+        if(buyerstorage[_highlight_id] == address(123)){
+            buyerstorage[_highlight_id] = msg.sender;
+            items[_highlight_id].sold = true;
+        }
         if(highlight.most_sold + 1 == originalmostsold[_highlight_id]){
             appear_or_not[append_unique(highlight.demo_url, highlight.round_num, highlight.player_num, highlight.csgo_map)] = false;
             appear_or_not_all[allconnect] = false;
