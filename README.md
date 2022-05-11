@@ -42,6 +42,6 @@ To experience my DAPP, please follow these steps:
 <img width="356" alt="image" src="https://user-images.githubusercontent.com/80507783/167769738-d0cf2a83-f533-453d-83f3-c741c9ce17c7.png">
 8. Add Hardhat Testnet in your MetaMask network. Here is the information you need.
 <img width="361" alt="image" src="https://user-images.githubusercontent.com/80507783/167769992-2d07fbd4-5167-4ee2-8a26-c8ef4a57a242.png">
-9. Now open a new terminal in Visual Studio Code. Run ```npm start```
+9. Now open a new terminal in Visual Studio Code. Run ```npm start```.<br>
 10. Go to http://localhost:3000/ and enjoy it!
 
