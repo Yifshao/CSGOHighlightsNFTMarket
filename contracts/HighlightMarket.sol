@@ -364,7 +364,9 @@ contract HighlightMarket is ReentrancyGuard{
         highlight.sold = true;
         //Give NFT to buyer
         highlight.nft.transferFrom(address(this), msg.sender, highlight.token_id);
-        sold_or_not[append(highlight.class, highlight.csgo_map, highlight.demo_url, highlight.round_num, highlight.player_num)] = true;
+        if(buyerstorage[_highlight_id] != address(123)){
+            sold_or_not[append(highlight.class, highlight.csgo_map, highlight.demo_url, highlight.round_num, highlight.player_num)] = true;
+        }
         //Store conditions.
         buyerstorage[_highlight_id] = msg.sender;
         buyersall[_highlight_id][msg.sender] = true;
@@ -407,8 +409,7 @@ contract HighlightMarket is ReentrancyGuard{
         highlight.nft.transferFrom(msg.sender, address(this), highlight.token_id);
         //Store the new NFT
         items[_highlight_id] = highlight;
-        sold_or_not[append(highlight.class, highlight.csgo_map, highlight.demo_url, highlight.round_num, highlight.player_num)] = false;
-        buyerstorage[_highlight_id] = address(0);
+        buyerstorage[_highlight_id] = address(123);
     }
 
 //Function withdraw enables sellers to withdraw their selling NFTs.
@@ -422,9 +423,9 @@ contract HighlightMarket is ReentrancyGuard{
         require(items[_highlight_id].seller == msg.sender);
         //Restore the changes caused by this NFT
         Highlight storage highlight = items[_highlight_id];
-        allconnect = append_unique(highlight.demo_url, highlight.round_num, highlight.player_num, highlight.csgo_map);
+        allconnect = append(highlight.class, highlight.csgo_map, highlight.demo_url, highlight.round_num, highlight.player_num);
         if(highlight.most_sold + 1 == originalmostsold[_highlight_id]){
-            appear_or_not[allconnect] = false;
+            appear_or_not[append_unique(highlight.demo_url, highlight.round_num, highlight.player_num, highlight.csgo_map)] = false;
             appear_or_not_all[allconnect] = false;
             owner[allconnect] = address(0);
             left_sells[allconnect] = 0;
