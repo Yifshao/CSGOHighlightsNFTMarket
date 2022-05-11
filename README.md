@@ -24,7 +24,10 @@ The frontend codes are in folder "src".
 ## Instructions
 
 PS: The instructions are a little bit long. If you just want to see the demo of my DAPP, you can choose to watch the demo video:
+
 https://drive.google.com/file/d/15RykVArUgz5LECiBCtRpYVTSmgu93oGW/view?usp=sharing
+
+https://youtu.be/AGdSSwdF3Q8
 
 I choose to use Hardhat Testnet + MetaMask instead of Huygens + Ale wallet for the demo of my decentralized application (DAPP). I have emailed Professor Li and he allowed me to do that.
 
