@@ -8,7 +8,7 @@
 ![ethers.js](https://img.shields.io/badge/ethers.js-%5E5.5.4-blue?style=flat-square)
 ![@openzeppelin](https://img.shields.io/badge/@openzeppelin-4.5.0-pink?style=flat-square)
 
-Final Project of ELEN E6883 (2022 Spring).
+Final Project of ELEN E6883 at Columbia University (2022 Spring).
 
 Author: Yifan Shao<br>
 UNI: ys3349
