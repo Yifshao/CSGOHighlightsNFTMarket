@@ -37,7 +37,7 @@ const Navigation = ({ loadaccount, account}) => {
                             <Nav.Link as={Link} to="/sell-your-purchase">Sell the NFT that you bought</Nav.Link>
                         </NavDropdown>
                         <NavDropdown eventKey={4} title="My sellings" id="basic-nav-dropdown-2">
-                            <Nav.Link as={Link} to="/my-selling-highlights">NFTs on sale</Nav.Link>
+                            <Nav.Link as={Link} to="/my-selling-highlights">NFTs for sale</Nav.Link>
                             <Nav.Link as={Link} to="/sold-highlights">NFTs sold</Nav.Link>
                         </NavDropdown>
                         <Nav.Link as={Link} to="/my-purchases">My purchases</Nav.Link>
