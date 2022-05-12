@@ -35,6 +35,10 @@ The (main) reason I choose to use Hardhat Testnet + MetaMask is that using Huyge
 
 Using ethers.js can solve all the problems of using mcp.js, but only MetaMask supports ethers.js now. Since professor Li told me that Metamask will be supported in the next version of ComputeCoin Network, I choose to use Hardhat Testnet+MetaMask for this demo. When next version of CCN is released, you can choose to use Huygens+MetaMask to use my DAPP. I have also deployed my smart contracts on Huygens successfully (the ABIs and addresses are stored in "/src/Huygens_contractsData"). I will also update my codes when next version of CCN is released.
 
+If you want to deploy my contracts on Huygens, run ```npx hardhat run scripts/deploy.js --network Huygens```
+
+If you want to deploy my contracts on Huygens_Dev, run ```npx hardhat run scripts/deploy.js --network Huygens_dev```
+
 ### How to run my codes:
 
 To experience my DAPP, please follow these steps:
