@@ -195,7 +195,7 @@ const Mysellinghighlights = ({highlightmarket, nft, account}) => {
                                                 More details
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                <Dropdown.Item>Demo URI: {highlight.demouri}</Dropdown.Item>
+                                                <Dropdown.Item>Demo URL: {highlight.demouri}</Dropdown.Item>
                                                 <Dropdown.Item>Description: {highlight.description}</Dropdown.Item>
                                                 <Dropdown.Item>Classification: {classificationnum(highlight.class)}</Dropdown.Item>
                                                 <Dropdown.Item>map: <img src={maptoimage(highlight.csgomap)} width='210' height='30' className='' alt='' /></Dropdown.Item>
@@ -219,7 +219,7 @@ const Mysellinghighlights = ({highlightmarket, nft, account}) => {
                                             <Modal.Title>Caution.</Modal.Title>
                                         </Modal.Header>
                                         <Modal.Body>
-                                            The gas fee you paid for your NFT will not be returned. If you sell a NFT that you bought, you cannot resell it after you withdraw it.
+                                            The gas fee you paid for your NFT will not be returned.
                                         </Modal.Body>
                                         <Modal.Footer>
                                         <Button variant="secondary" onClick={handlecautionClose}>

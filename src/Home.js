@@ -182,7 +182,7 @@ const Home = ({highlightmarket,nft}) =>{
                                                         More details
                                                     </Dropdown.Toggle>
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item >Demo URI: {highlight.demouri}</Dropdown.Item>
+                                                        <Dropdown.Item >Demo URL: {highlight.demouri}</Dropdown.Item>
                                                         <Dropdown.Item >Round: {highlight.roundnum}</Dropdown.Item>
                                                         <Dropdown.Item >Player: {playernumtostr(highlight.playernum)}</Dropdown.Item>
                                                         <Dropdown.Item>Inventory(from original owner): {highlight.mostnum}</Dropdown.Item>

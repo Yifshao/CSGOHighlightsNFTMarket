@@ -175,7 +175,7 @@ const SoldNFTs = ({highlightmarket, nft, account}) => {
                                                 More details
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                <Dropdown.Item>Demo URI: {highlight.demouri}</Dropdown.Item>
+                                                <Dropdown.Item>Demo URL: {highlight.demouri}</Dropdown.Item>
                                                 <Dropdown.Item>Description: {highlight.description}</Dropdown.Item>
                                                 <Dropdown.Item>Classification: {classificationnum(highlight.class)}</Dropdown.Item>
                                                 <Dropdown.Item>map: <img src={maptoimage(highlight.csgomap)} width='210' height='30' className='' alt='' /></Dropdown.Item>
