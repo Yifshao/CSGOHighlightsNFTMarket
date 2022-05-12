@@ -276,7 +276,7 @@ contract HighlightMarket is ReentrancyGuard{
 //3. The NFT of this highlight should be created before.
 //4. The highlight's owner should be the person who run this function.
 //5. The NFT of this highlight should be sold.
-//6. The left most_sold number should be larger than 0. (The highlight should be soldable).
+//6. The left most_sold number should be larger than 0. (The highlight should be available for sale).
 
     function resellhighlight(IERC721 _nft, uint256 _tokenId, uint256 _price, 
                             classification _class, maps _csgo_map, string memory _demo_url, uint256 _round_num, 
