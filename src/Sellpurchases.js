@@ -23,6 +23,15 @@ const Sellpurchases = ({highlightmarket, nft, account}) => {
         setsellid(highlightID)
         setshows(true)}
     const [newprice, setnewprice] = useState(null)
+    const [confirm, setconfirm] = useState(false)
+    const handleconfirmShow = () => {
+        if(newprice <= 0){
+            handlepriceShow()
+        }
+        else{setconfirm(true)}}
+    const handleconfirmClose = () => {
+        setconfirm(false)
+    setshows(false)}
 
     const maptoimage = (map) =>{
         if(Number(map) === 0){
@@ -214,10 +223,27 @@ const Sellpurchases = ({highlightmarket, nft, account}) => {
                                         <Button variant="secondary" onClick={handleshowsClose}>
                                             Close
                                         </Button>
-                                        <Button variant="primary" onClick={() => resellNFT()} as={Link} to="/success-create">
+                                        <Button variant="primary" onClick={handleconfirmShow}>
                                             Confirm
                                         </Button>
                                         </Modal.Footer>
+                                        </Modal>
+                                        <Modal show={confirm} onHide={handleconfirmClose}>
+                                            <Modal.Header closeButton>
+                                                <Modal.Title>Confirm the new price.</Modal.Title>
+                                            </Modal.Header>
+                                            <Modal.Body>
+                                                <p>{newprice} ETH</p>
+                                            </Modal.Body>
+                                            <Modal.Footer>
+                                            <Button variant="secondary" onClick={handleconfirmClose}>
+                                                Close
+                                            </Button>
+                                            <Button variant="primary" onClick={() => resellNFT()} as={Link} to="/success-create">
+                                                Confirm
+                                            </Button>
+                                            </Modal.Footer>
+
                                         </Modal>
                                         <Modal show={pricenegative} onHide={handlepriceClose}>
                                             <Modal.Header closeButton>
