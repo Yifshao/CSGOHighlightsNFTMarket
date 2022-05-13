@@ -417,11 +417,13 @@ contract HighlightMarket is ReentrancyGuard{
 //Has several requirements before running function (to save gas fee)
 //1. The NFT should exist.
 //2. The NFT should be ownered by the person who run this function.
+//3. The NFT is being sold.
 
     function withdraw(uint256 _highlight_id) external nonReentrant{
         require(_highlight_id > 0, "The highlight does not exist.");
         require(_highlight_id <= itemCount, "The highlight does not exist.");
         require(items[_highlight_id].seller == msg.sender);
+        require(items[_highlight_id].sold == false);
         //Restore the changes caused by this NFT
         Highlight storage highlight = items[_highlight_id];
         allconnect = append(highlight.class, highlight.csgo_map, highlight.demo_url, highlight.round_num, highlight.player_num);
