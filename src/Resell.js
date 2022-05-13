@@ -95,30 +95,44 @@ const Resell = ({ highlightmarket, nft, account}) => {
     const [player, setplayer] = useState('Terrorist No.1')
     const [uploadornot, setuploadornot] = useState(false)
     const [notfull, setnotfull] = useState(false)
-    const handlenotfullClose = () => setnotfull(false);
+    const handlenotfullClose = () => {
+        setnotfull(false)
+        setintermit(false)}
     const handlenotfullShow = () => setnotfull(true)
     const [pricenegative, setpricenegative] = useState(false)
-    const handlepriceClose = () => setpricenegative(false)
+    const handlepriceClose = () => {
+        setpricenegative(false)
+        setintermit(false)}
     const handlepriceShow = () => setpricenegative(true)
     const [roundwrong, setroundwrong] = useState(false)
-    const handleroundClose = () => setroundwrong(false)
+    const handleroundClose = () => {
+        setroundwrong(false)
+        setintermit(false)}
     const handleroundShow = () => setroundwrong(true)
 
     const [appear, setappear] = useState(null)
     const [appearerror, setappearerror] = useState(false)
-    const handleappearerrorClose = () => setappearerror(false)
+    const handleappearerrorClose = () => {
+        setappearerror(false)
+        setintermit(false)}
     const handleappearerrorShow = () => setappearerror(true)
     const [oldowner, setoldowner] = useState(null)
     const [isowner, setisowner] = useState(false)
-    const handleisownerClose = () => setisowner(false)
+    const handleisownerClose = () => {
+        setisowner(false)
+        setintermit(false)}
     const handleisowenrShow = () => setisowner(true)
     const [soldornot, setsoldornot] = useState(null)
     const [notsold, setnotsold] = useState(false)
-    const handlenotsoldClose = () => setnotsold(false)
+    const handlenotsoldClose = () => {
+        setnotsold(false)
+        setintermit(false)}
     const handlenotsoldShow = () => setnotsold(true)
     const [lefttimes, setlefttimes] = useState(null)
     const [cansold, setcansold] = useState(false)
-    const handlecansoldClose = () => setcansold(false)
+    const handlecansoldClose = () => {
+        setcansold(false)
+        setintermit(false)}
     const handlecansoldShow = () => setcansold(true)
 
     const maptoimage = (map) =>{
